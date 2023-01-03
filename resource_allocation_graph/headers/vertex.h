@@ -3,12 +3,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "resource.h"
+#include "process.h"
 
 #define MAX_VERTICES 100
 
 // Structure to represent a vertex in the graph
 typedef struct Vertex {
-    int value;
+    Resource *resource;
+    Process *process;
     int visited;
     struct Vertex *next; // Pointer to the next vertex in the linked list
 } Vertex;
@@ -19,7 +22,7 @@ typedef struct Graph {
     int numVertices;
 } Graph;
 
-Vertex* createVertex(int value);
+Vertex* createVertex(Resource *resource, Process *process);
 
 Graph* createGraph();
 

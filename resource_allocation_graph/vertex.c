@@ -1,8 +1,9 @@
 #include "headers/vertex.h"
 
-Vertex* createVertex(int value) {
+Vertex* createVertex(Resource *resource, Process *process) {
     Vertex *vertex = malloc(sizeof(Vertex));
-    vertex->value;
+    vertex->resource = resource;
+    vertex->process = process;
     vertex->visited = 0;
     vertex->next = NULL;
 

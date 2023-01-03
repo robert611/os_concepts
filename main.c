@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "resource_allocation_graph/headers/resource.h"
 #include "resource_allocation_graph/headers/process.h"
+#include "resource_allocation_graph/headers/vertex.h"
+#include "resource_allocation_graph/headers/deadlock_graph.h"
 
 int main() {
     printf("Hello, World!");
@@ -17,6 +19,8 @@ int main() {
     printf("My usb process name is: %s", usb_process->name);
 
     free(usb_resource);
+
+    Graph *deadlockGraph = createDeadlockGraph();
     
     return 0;
 }
